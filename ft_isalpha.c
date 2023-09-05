@@ -13,7 +13,7 @@
 #include <ctype.h>
 #include <stdio.h>
 
-
+// norminete and remove libraries, and main 
 static int	ft_isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
@@ -32,37 +32,37 @@ static int	ft_islower(int c)
 	return (0);
 }
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	return (ft_isupper(c) || ft_islower(c));
 }
 
-int main ()
+int	main ()
 {
     //int isalpha(int c); // ekvivaletno isupper || islower
     //int isupper(int c);
     printf("%d", isalpha('3')); 
 
-    printf("Original function value is %d\n", islower('a'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('a'));
+    printf("Original function value is %d\n", ft_isalpha('a'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('a'));
 
-    printf("Original function value is %d\n", islower('b'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('b'));
+    printf("Original function value is %d\n", ft_isalpha('b'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('b'));
 
-    printf("Original function value is %d\n", islower('z'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('z'));
+    printf("Original function value is %d\n", ft_isalpha('z'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('z'));
 
-    printf("Original function value is %d\n", islower('a'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('a'));
+    printf("Original function value is %d\n", ft_isalpha('a'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('a'));
 
-    printf("Original function value is %d\n", islower(0));
-    printf("Mycopyyy function value is %d\n\n", ft_islower(0));
+    printf("Original function value is %d\n", ft_isalpha(0));
+    printf("Mycopyyy function value is %d\n\n", isalpha(0));
 
-    printf("Original function value is %d\n", islower('A'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('A'));
+    printf("Original function value is %d\n", ft_isalpha('A'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('A'));
 
-    printf("Original function value is %d\n", islower('\n'));
-    printf("Mycopyyy function value is %d\n\n", ft_islower('\n'));
+    printf("Original function value is %d\n", ft_isalpha('\n'));
+    printf("Mycopyyy function value is %d\n\n", isalpha('\n'));
 
     return (0);
 }
