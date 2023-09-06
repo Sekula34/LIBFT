@@ -16,29 +16,30 @@
 #include <stdio.h>
 #include <string.h>
 
-static size_t lengthf_of_src(const char *src)
+static size_t	lengthf_of_src(const char *src)
 {
-	size_t i; 
-	i = 0; 
+	size_t	i;
+
+	i = 0;
 	while (src[i] != '\0')
 	{
 		i++; 
 	}
-	return(i); 
+	return (i); 
 }
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int i; 
-	i = 0; 
+	int	i;
 
-	while(size > 1)
+	i = 0;
+	while (size > 1)
 	{
 		dst[i] = src[i]; 
 		i++; 
 		size--; 
 	}
-	if(size > 0)
+	if (size > 0)
 	{
 		dst[i] = '\0';
 		i++; 
