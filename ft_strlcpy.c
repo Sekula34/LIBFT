@@ -30,7 +30,7 @@ static size_t	lengthf_of_src(const char *src)
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (size > 1)
