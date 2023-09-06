@@ -29,13 +29,15 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int	i;
 	int length; 
+	int length_src;
 
 	i = 0;
-	length = lengthf_of_str(dst); 
-	while (size > 1)
+	length = lengthf_of_str(dst);
+	length_src = lengthf_of_str(src); 
+	while ((size > 1) && src[i] != '\0')
 	{
-		dst[length + i] = src[i]; 
-		i++; 
+		*(dst + length  + i) = *(src + i); 
+		i++;
 		size--; 
 	}
 	if (size > 0)
@@ -43,5 +45,29 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		dst[length + i] = '\0';
 		i++; 
 	}
-	return (lengthf_of_str(src) + length); 
+	return (length_src + length); 
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char first[50] = "This is ";
+    char last[] = "a potentially long string";
+    int r;
+    int size = 160;
+    char buffer[size];
+
+    strcpy(buffer,first);
+    r = ft_strlcat(buffer,last,size);
+
+    puts(buffer);
+    printf("Value returned: %d\n",r);
+    if( r > size )
+        puts("String truncated");
+    else
+        puts("String was fully copied");
+
+    return(0);
 }
