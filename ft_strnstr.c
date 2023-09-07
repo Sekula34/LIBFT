@@ -12,32 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i; 
-
-	i = 0; 
-	while ((n - i) > 0 && (s1[i] != '\0' || s2[i] != '\0'))
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++; 
-	}
-	return (0); 
-}
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0; 
-	while (s[i] != '\0')
-	{
-		i++; 
-	}
-	return (i); 
-}
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i; 
