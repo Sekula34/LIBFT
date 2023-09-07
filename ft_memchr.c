@@ -10,36 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *p;
-	size_t i;
+	unsigned char	*p;
+	size_t			i;
 
 	i = 0;
 	p = (unsigned char *) s; 
 	while (i < n)
 	{
-		if(p[i] == c)
+		if (p[i] == c)
 			return (p + i);
 		i++; 
 	}
 	return (NULL); 
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int main () {
-   const char str[] = "https://www.tutorialspoint.com";
-   const char ch = 'w';
-   char *ret;
+// int main () {
+//    const char str[] = "https://www.tutorialspoint.com";
+//    const char ch = 'w';
+//    char *ret;
 
-   ret = memchr(str, ch, strlen(str));
+//    ret = memchr(str, ch, strlen(str));
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
+//    printf("String after |%c| is - |%s|\n", ch, ret);
 
-   return(0);
-}
+//    return(0);
+// }

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
@@ -22,26 +21,27 @@ int	ft_isascii(int c)
 	return (0); 
 }
 
-int main()
-{
+// #include <ctype.h>
+// #include <stdio.h>
+// int main()
+// {
 
-    printf("Original function value is %d\n", ft_isascii('0'));
-    printf("Mycopyyy function value is %d\n\n", __isascii('0'));
+//     printf("Original function value is %d\n", ft_isascii('0'));
+//     printf("Mycopyyy function value is %d\n\n", __isascii('0'));
 
-    printf("Original function value is %d\n", ft_isascii('9'));
-    printf("Mycopyyy function value is %d\n\n", __isascii('9'));
+//     printf("Original function value is %d\n", ft_isascii('9'));
+//     printf("Mycopyyy function value is %d\n\n", __isascii('9'));
 
-    printf("Original function value is %d\n", ft_isascii('4'));
-    printf("Mycopyyy function value is %d\n\n", __isascii('4'));
+//     printf("Original function value is %d\n", ft_isascii('4'));
+//     printf("Mycopyyy function value is %d\n\n", __isascii('4'));
 
-    printf("Original function value is %d\n", ft_isascii('\n'));
-    printf("Mycopyyy function value is %d\n\n", __isascii('\n'));
+//     printf("Original function value is %d\n", ft_isascii('\n'));
+//     printf("Mycopyyy function value is %d\n\n", __isascii('\n'));
 
-    printf("Original function value is %d\n", ft_isascii(-127));
-    printf("Mycopyyy function value is %d\n\n", __isascii(-127));
+//     printf("Original function value is %d\n", ft_isascii(-127));
+//     printf("Mycopyyy function value is %d\n\n", __isascii(-127));
 
-    printf("Original function value is %d\n", ft_isascii(200));
-    printf("Mycopyyy function value is %d\n\n", __isascii(200));
-    
-    return (0);
-}
+//     printf("Original function value is %d\n", ft_isascii(200));
+//     printf("Mycopyyy function value is %d\n\n", __isascii(200));
+//     return (0);
+// }

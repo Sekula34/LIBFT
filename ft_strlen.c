@@ -10,12 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-
-#include <string.h>
-#include <stdlib.h>
-
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -28,26 +23,26 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i); 
 }
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
+// int main ()
+// {
+// 	if(ft_strlen("Filip") == strlen("Filip"))
+// 	{
+// 		printf("isti su \n"); 
+// 	}
+// 	else 
+// 	{
+// 		printf("nisu \n"); 
+// 	}
 
-int main ()
-{
-	if(ft_strlen("Filip") == strlen("Filip"))
-	{
-		printf("isti su \n"); 
-	}
-	else 
-	{
-		printf("nisu \n"); 
-	}
-
-	if(ft_strlen("") == strlen(""))
-	{
-		printf("isti su \n"); 
-	}
-	else 
-	{
-		printf("nisu \n"); 
-	}
-
-
-}
+// 	if(ft_strlen("") == strlen(""))
+// 	{
+// 		printf("isti su \n"); 
+// 	}
+// 	else 
+// 	{
+// 		printf("nisu \n"); 
+// 	}
+// }

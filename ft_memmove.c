@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -50,16 +50,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 		return (dest); 
 	}
-
 }
-/* memmove example */
-#include <stdio.h>
-#include <string.h>
+// /* memmove example */
+// #include <stdio.h>
+// #include <string.h>
 
-int main ()
-{
-  char str[] = "memmove can be very useful......";
-  ft_memmove (str+20,str+15,11);
-  puts (str);
-  return 0;
-}
+// int main ()
+// {
+//   char str[] = "memmove can be very useful......";
+//   ft_memmove (str+20,str+15,11);
+//   puts (str);
+//   return 0;
+// }

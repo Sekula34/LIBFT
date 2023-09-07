@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
-
-#include<stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -33,21 +30,25 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int main () {
-// declare and initialize two array
-   int a[2]={1,2}; 
-   int b[2]={3,4};
-   printf("The data in destination before memcpy occurs\n");
-// display array elements before copy
-   for(int i=0;i<2;i++){
-       printf("%d\t",a[i]);
-   }
-// copy array elements stored in the memory of b to the memory of a
-   ft_memcpy(a, b, sizeof(int)*2);
-   printf("\nThe data in destination after memcpy occurs\n");
-// display array elements after copy
-   for(int i=0;i<2;i++){
-       printf("%d\t",a[i]);
-   }
-   return(0);
-}
+// #include<string.h>
+// #include<stdio.h>
+
+// #include<stdlib.h>
+// int main () {
+// // declare and initialize two array
+//    int a[2]={1,2}; 
+//    int b[2]={3,4};
+//    printf("The data in destination before memcpy occurs\n");
+// // display array elements before copy
+//    for(int i=0;i<2;i++){
+//        printf("%d\t",a[i]);
+//    }
+// // copy array elements stored in the memory of b to the memory of a
+//    ft_memcpy(a, b, sizeof(int)*2);
+//    printf("\nThe data in destination after memcpy occurs\n");
+// // display array elements after copy
+//    for(int i=0;i<2;i++){
+//        printf("%d\t",a[i]);
+//    }
+//    return(0);
+// }

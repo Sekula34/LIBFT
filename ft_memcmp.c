@@ -10,21 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include<stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *p1; 
-	unsigned char *p2; 
-	size_t i; 
+	unsigned char	*p1; 
+	unsigned char	*p2; 
+	size_t			i; 
 
 	p1 = (unsigned char *) s1; 
 	p2 = (unsigned char *) s2; 
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		if(p1[i] != p2[i])
+		if (p1[i] != p2[i])
 		{
 			return (p1[i] - p2[i]); 
 		}
@@ -33,26 +32,26 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0); 
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int main () {
-   char str1[15];
-   char str2[15];
-   int ret;
+// int main () {
+//    char str1[15];
+//    char str2[15];
+//    int ret;
 
-   memcpy(str1, "abcdef", 6);
-   memcpy(str2, "ab", 6);
+//    memcpy(str1, "abcdef", 6);
+//    memcpy(str2, "ab", 6);
 
-   ret = ft_memcmp(str1, str2, 2);
+//    ret = ft_memcmp(str1, str2, 2);
 
-   if(ret > 0) {
-      printf("str2 is less than str1");
-   } else if(ret < 0) {
-      printf("str1 is less than str2");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   return(0);
-}
+//    if(ret > 0) {
+//       printf("str2 is less than str1");
+//    } else if(ret < 0) {
+//       printf("str1 is less than str2");
+//    } else {
+//       printf("str1 is equal to str2");
+//    }
+
+//    return(0);
+// }

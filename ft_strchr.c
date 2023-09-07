@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -27,14 +27,13 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) s + i);
 	return (NULL); 
 }
-#include <stdio.h>
-#include <string.h>
-int main () {
-   const char str[] = "This is just a String"; 
-   const char ch = 'u'; 
-   char *p;
-   p = ft_strchr(str, ch);
-   printf("String starting from %c is: %s", ch, p);
-   return 0;
-}
-
+// #include <stdio.h>
+// #include <string.h>
+// int main () {
+//    const char str[] = "This is just a String"; 
+//    const char ch = 'u'; 
+//    char *p;
+//    p = ft_strchr(str, ch);
+//    printf("String starting from %c is: %s", ch, p);
+//    return 0;
+// }

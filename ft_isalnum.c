@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 static int	ft_isupper(int c)
 {
@@ -45,27 +44,28 @@ int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
+// #include <ctype.h>
+// #include <stdio.h>
+// int	main()
+// {
+//     printf("Original function value is %d\n", ft_isalnum('a'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('a'));
 
-int	main()
-{
-    printf("Original function value is %d\n", ft_isalnum('a'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('a'));
+//     printf("Original function value is %d\n", ft_isalnum('B'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('B'));
 
-    printf("Original function value is %d\n", ft_isalnum('B'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('B'));
+//     printf("Original function value is %d\n", ft_isalnum('k'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('k'));
 
-    printf("Original function value is %d\n", ft_isalnum('k'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('k'));
+//     printf("Original function value is %d\n", ft_isalnum('Z'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('Z'));
 
-    printf("Original function value is %d\n", ft_isalnum('Z'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('Z'));
+//     printf("Original function value is %d\n", ft_isalnum(0));
+//     printf("Mycopyyy function value is %d\n\n", isalnum(0));
 
-    printf("Original function value is %d\n", ft_isalnum(0));
-    printf("Mycopyyy function value is %d\n\n", isalnum(0));
+//     printf("Original function value is %d\n", ft_isalnum('3'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('3'));
 
-    printf("Original function value is %d\n", ft_isalnum('3'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('3'));
-
-    printf("Original function value is %d\n", ft_isalnum('\n'));
-    printf("Mycopyyy function value is %d\n\n", isalnum('\n'));
-}
+//     printf("Original function value is %d\n", ft_isalnum('\n'));
+//     printf("Mycopyyy function value is %d\n\n", isalnum('\n'));
+// }
