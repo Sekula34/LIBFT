@@ -56,6 +56,19 @@ static char *get_me_word(char const *s, char c)
 	return (p);
 }
 
+void free_arr(char **p)
+{
+	int i;
+
+	i = 0;
+	while (p[i] != NULL)
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+}
+
 char **ft_split(char const *s, char c)
 {
 	char **p;
@@ -73,12 +86,12 @@ char **ft_split(char const *s, char c)
 	{
 		while(s[i] == c && s[i] != '\0')
 			i++;
-		p[j] = get_me_word(s[i], c);
+		p[j] = get_me_word(&s[i], c);
 		j++;
 		while(s[i] != c && s[i] != '\0')
 			i++;
 	}
-	p[j] == NULL;
+	p[j] = NULL;
 	return (p);
 }
 
@@ -87,7 +100,15 @@ char **ft_split(char const *s, char c)
 
 int main()
 {
-	char s1[] = "Filip.a.b..c."; 
-	printf("%zu", number_of_elements(s1, '.'));
+	char s1[] = "Filip.a.b..c.";
+	char **p;
+	p = ft_split(s1, '.');
+	int i = 0;
+	while(i < 4)
+	{
+		printf("%s\n", p[i]);
+		i++;
+	}
+	free_arr(p);
 	return (0);
 }
