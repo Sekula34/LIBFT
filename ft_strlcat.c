@@ -19,32 +19,32 @@ static size_t	lengthf_of_str(const char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		i++; 
+		i++;
 	}
-	return (i); 
+	return (i);
 }
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int	i;
-	int	length; 
+	int	length;
 	int	length_src;
 
 	i = 0;
 	length = lengthf_of_str(dst);
-	length_src = lengthf_of_str(src); 
+	length_src = lengthf_of_str(src);
 	while ((size > 1) && src[i] != '\0')
 	{
 		*(dst + length + i) = *(src + i);
 		i++;
-		size--; 
+		size--;
 	}
 	if (size > 0)
 	{
 		dst[length + i] = '\0';
-		i++; 
+		i++;
 	}
-	return (length_src + length); 
+	return (length_src + length);
 }
 // #include <stdio.h>
 // #include <string.h>

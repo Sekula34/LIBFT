@@ -19,9 +19,9 @@ static size_t	lengthf_of_src(const char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		i++; 
+		i++;
 	}
-	return (i); 
+	return (i);
 }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
@@ -31,16 +31,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	while (size > 1)
 	{
-		dst[i] = src[i]; 
-		i++; 
-		size--; 
+		dst[i] = src[i];
+		i++;
+		size--;
 	}
 	if (size > 0)
 	{
 		dst[i] = '\0';
-		i++; 
+		i++;
 	}
-	return (lengthf_of_src(src)); 
+	return (lengthf_of_src(src));
 }
 // void test(int size)
 // {

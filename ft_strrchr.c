@@ -16,24 +16,24 @@ static size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
-	i = 0; 
+	i = 0;
 	while (s[i] != '\0')
 	{
-		i++; 
+		i++;
 	}
-	return (i); 
+	return (i);
 }
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	length_s; 
+	size_t	length_s;
 
 	length_s = ft_strlen(s);
 	while (length_s > 0)
 	{
 		if (s[length_s] == c)
 			return ((char *)(s + length_s));
-		length_s --; 
+		length_s --;
 	}
 	if (s[length_s] == c)
 		return ((char *)s);

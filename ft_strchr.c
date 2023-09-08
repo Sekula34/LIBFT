@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i; 
+	int	i;
 
-	i = 0; 
+	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0')
 		return ((char *) s + i);
-	return (NULL); 
+	return (NULL);
 }
 // #include <stdio.h>
 // #include <string.h>

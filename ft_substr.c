@@ -17,19 +17,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*p;
 	size_t	i;
 
-	if(start > ft_strlen(s))
-		return (NULL); 
+	if (start > ft_strlen(s))
+		return (NULL);
 	i = 0;
 	p = ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	while ((i < len) && (s[start] != '\0'))
 	{
-		p[i] = s[start]; 
-		i++; 
-		start++; 
+		p[i] = s[start];
+		i++;
+		start++;
 	}
-	return (p); 
+	return (p);
 }
 // #include<stdio.h>
 // int main()
