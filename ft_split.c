@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-static size_t	number_of_elements (char const *s, char c)
+static size_t	number_of_elements(char const *s, char c)
 {
-	size_t noe;
-	size_t i;
+	size_t	noe;
+	size_t	i;
 
 	i = 0;
 	noe = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if(s[i] != c)
+		if (s[i] != c)
 		{
 			noe ++;
 			while ((s[i] != c) && (s[i] != '\0'))
@@ -29,36 +29,35 @@ static size_t	number_of_elements (char const *s, char c)
 		}
 		i++;
 	}
-	return (noe); 
-	
+	return (noe);
 }
 
-static char *get_me_word(char const *s, char c)
+static char	*get_me_word(char const *s, char c)
 {
-	int i;
-	char *p;
-	int j;
+	int		i;
+	char	*p;
+	int		j;
 
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 	{
-		i++; 
+		i++;
 	}
-	p = ft_calloc(i, sizeof(char)); 
-	if(p == NULL)
-		return (NULL); 
+	p = ft_calloc(i + 1, sizeof(char));
+	if (p == NULL)
+		return (NULL);
 	j = 0;
-	while(j < i)
+	while (j < i)
 	{
-		p[j] = s[j]; 
+		p[j] = s[j];
 		j++;
 	}
 	return (p);
 }
 
-void free_arr(char **p)
+void	free_arr(char **p)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (p[i] != NULL)
@@ -69,46 +68,46 @@ void free_arr(char **p)
 	free(p);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **p;
-	size_t noe;
-	size_t i;
-	size_t j;
+	char	**p;
+	size_t	noe;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	i = 0;
-	noe = number_of_elements(s,c);
-	p = malloc(sizeof(char **) * (noe + 1));
-	if(p == NULL)
-		return (NULL); 
-	while(j < noe)
+	noe = number_of_elements(s, c);
+	p = malloc (sizeof(char **) * (noe + 1));
+	if (p == NULL)
+		return (NULL);
+	while (j < noe)
 	{
-		while(s[i] == c && s[i] != '\0')
+		while (s[i] == c && s[i] != '\0')
 			i++;
 		p[j] = get_me_word(&s[i], c);
 		j++;
-		while(s[i] != c && s[i] != '\0')
+		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
 	p[j] = NULL;
 	return (p);
 }
 
-#include "libft.h"
-#include <stdio.h> 
+// #include "libft.h"
+// #include <stdio.h> 
 
-int main()
-{
-	char s1[] = "Filip.a.b..c.";
-	char **p;
-	p = ft_split(s1, '.');
-	int i = 0;
-	while(i < 4)
-	{
-		printf("%s\n", p[i]);
-		i++;
-	}
-	free_arr(p);
-	return (0);
-}
+// int main()
+// {
+// 	char s1[] = "Filip.a.b..c.";
+// 	char **p;
+// 	p = ft_split(s1, '.');
+// 	int i = 0;
+// 	while(p[i])
+// 	{
+// 		printf("%s\n", p[i]);
+// 		i++;
+// 	}
+// 	free_arr(p);
+// 	return (0);
+// }
