@@ -55,7 +55,7 @@ static char	*get_me_word(char const *s, char c)
 	return (p);
 }
 
-void	free_arr(char **p)
+static void	free_arr(char **p)
 {
 	int	i;
 
