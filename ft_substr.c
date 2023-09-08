@@ -17,10 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*p;
 	size_t	i;
 
+	if(start > ft_strlen(s))
+		return (NULL); 
 	i = 0;
 	p = ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
-		return (NULL); 
+		return (NULL);
 	while ((i < len) && (s[start] != '\0'))
 	{
 		p[i] = s[start]; 
@@ -35,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	char s[] = "FilipSeles"; 
 // 	char *p1; 
 
-// 	p1 = ft_substr(s,3,2); 
+// 	p1 = ft_substr(s,9,2); 
 // 	printf("%s", p1); 
 // 	free(p1); 
 // 	return (0); 
