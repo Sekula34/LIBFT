@@ -64,7 +64,7 @@ char	*ft_itoa(int n)
 		n1 = n1 * (-1);
 		minus = 1;
 	}
-	p = calloc(nod + 1, sizeof(char));
+	p = ft_calloc(nod + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	digit_filler(p, n1, minus, nod);
