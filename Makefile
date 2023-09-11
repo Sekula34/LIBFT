@@ -42,12 +42,20 @@ ft_toupper.c
 OBJS := $(SRCS:%.c=%.o)
 
 $(NAME): $(OBJS)
-	cc -c -Wall -Wextra -Werror $(SRCS) -I./
 	ar -rc $(NAME) $(OBJS)
 
-.PHONY: clean fclean re all
+%.o: %.c
+	$(COMPILER) $(COMP_FLAGS) -c $< -o $@ -I./
 
 all: $(NAME)
 
 clean:
-	rm $(NAME) $(OBJS)
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+
+.PHONY: clean fclean re all
