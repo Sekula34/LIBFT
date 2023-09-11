@@ -17,10 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*p;
 	size_t	i;
 
-	if (start > ft_strlen(s))
-		return (NULL);
 	i = 0;
-	p = ft_calloc(len + 1, sizeof(char));
+	if (start >= ft_strlen(s))
+	{
+		p = ft_calloc(1, 1);
+		return (p);
+	}
+	else
+		p = ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	while ((i < len) && (s[start] != '\0'))
