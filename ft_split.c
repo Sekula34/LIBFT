@@ -32,29 +32,6 @@ static size_t	number_of_elements(char const *s, char c)
 	return (noe);
 }
 
-static char	*get_me_word(char const *s, char c)
-{
-	int		i;
-	char	*p;
-	int		j;
-
-	i = 0;
-	while (s[i] != c && s[i] != '\0')
-	{
-		i++;
-	}
-	p = ft_calloc(i + 1, sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	j = 0;
-	while (j < i)
-	{
-		p[j] = s[j];
-		j++;
-	}
-	return (p);
-}
-
 static void	free_arr(char **p)
 {
 	int	i;
@@ -66,6 +43,30 @@ static void	free_arr(char **p)
 		i++;
 	}
 	free(p);
+}
+
+static char	*get_me_word(char const *s, char c, char **p2)
+{
+	int		i;
+	char	*p;
+	int		j;
+
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	p = ft_calloc(i + 1, sizeof(char));
+	if (p == NULL)
+	{
+		free_arr(p2);
+		return (NULL);
+	}
+	j = 0;
+	while (j < i)
+	{
+		p[j] = s[j];
+		j++;
+	}
+	return (p);
 }
 
 char	**ft_split(char const *s, char c)
@@ -81,11 +82,11 @@ char	**ft_split(char const *s, char c)
 	p = malloc (sizeof(char **) * (noe + 1));
 	if (p == NULL)
 		return (NULL);
-	while (j < noe)
+	while ((j < noe) && (p != NULL))
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		p[j] = get_me_word(&s[i], c);
+		p[j] = get_me_word(&s[i], c, p);
 		j++;
 		while (s[i] != c && s[i] != '\0')
 			i++;
