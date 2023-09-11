@@ -36,6 +36,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start_index = 0;
 	sub_end = 0;
 	i = 0;
+	if(s1 == NULL || set == NULL)
+		return (NULL);
 	while (is_in_char_set (s1[start_index], set))
 		start_index ++;
 	while (is_in_char_set (s1[ft_strlen(s1) - 1 - sub_end], set))
@@ -55,8 +57,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 // #include<stdio.h>
 // int main()
 // {
-// 	char s[] = " Filip  ";
-// 	char s1[] = " ";
+// 	char s[] = "";
+// 	char s1[] = "a";
 // 	char *p1; 
 
 // 	p1 = ft_strtrim(s, s1); 
