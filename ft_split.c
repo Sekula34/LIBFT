@@ -95,20 +95,20 @@ char	**ft_split(char const *s, char c)
 	return (p);
 }
 
-// #include "libft.h"
-// #include <stdio.h> 
+#include "libft.h"
+#include <stdio.h> 
 
-// int main()
-// {
-// 	char s1[] = "Filip.a.b..c.";
-// 	char **p;
-// 	p = ft_split(s1, '.');
-// 	int i = 0;
-// 	while(p[i])
-// 	{
-// 		printf("%s\n", p[i]);
-// 		i++;
-// 	}
-// 	free_arr(p);
-// 	return (0);
-// }
+int main()
+{
+	//char s1[] = "Filip.a.b..c.";
+	char **p;
+	p = ft_split("hello!", 32);
+	int i = 0;
+	while(p[i])
+	{
+		printf("%s\n", p[i]);
+		i++;
+	}
+	free_arr(p);
+	return (0);
+}

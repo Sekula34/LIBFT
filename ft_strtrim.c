@@ -53,15 +53,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (p);
 }
-// #include<stdio.h>
-// int main()
-// {
-// 	char s[] = "";
-// 	char s1[] = "";
-// 	char *p1; 
 
-// 	p1 = ft_strtrim(s, s1); 
-// 	printf("%s", p1); 
-// 	free(p1); 
-// 	return (0); 
-// }
+#include<stdio.h>
+int main()
+{
+	char s[] = "  \t \t \n   \n\n\n\t";
+	char s1[] = " \n\t";
+	char *p1; 
+
+	p1 = ft_strtrim(s, s1); 
+	printf("%s", p1); 
+	free(p1); 
+	return (0); 
+}
