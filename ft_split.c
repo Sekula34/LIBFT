@@ -19,6 +19,8 @@ static size_t	number_of_elements(char const *s, char c)
 
 	i = 0;
 	noe = 0;
+	if (c == '\0')
+		return (1);
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -87,6 +89,8 @@ char	**ft_split(char const *s, char c)
 		while (s[i] == c && s[i] != '\0')
 			i++;
 		p[j] = get_me_word(&s[i], c, p);
+		if (p[j] == NULL)
+			return (NULL);
 		j++;
 		while (s[i] != c && s[i] != '\0')
 			i++;
@@ -101,11 +105,11 @@ char	**ft_split(char const *s, char c)
 // {
 // 	//char s1[] = "Filip.a.b..c.";
 // 	char **p;
-// 	p = ft_split("hello!", 32);
+// 	p = ft_split("hello!", '\0');
 // 	int i = 0;
 // 	while(p[i])
 // 	{
-// 		printf("%s\n", p[i]);
+// 		printf("-> '%s'\n", p[i]);
 // 		i++;
 // 	}
 // 	free_arr(p);
