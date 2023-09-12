@@ -27,13 +27,13 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) s + i);
 	return (NULL);
 }
-#include <stdio.h>
-#include <string.h>
-int main () {
-   const char str[] = "teste"; 
-   const char ch = '\0'; 
-   char *p;
-   p = ft_strchr(str, ch);
-   printf("String starting from %c is: %s", ch, p);
-   return 0;
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main () {
+//    const char str[] = "teste"; 
+//    const char ch = '\0'; 
+//    char *p;
+//    p = ft_strchr(str, ch);
+//    printf("String starting from %c is: %s", ch, p);
+//    return 0;
+// }
