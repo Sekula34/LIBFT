@@ -19,6 +19,8 @@ static size_t	number_of_elements(char const *s, char c)
 
 	i = 0;
 	noe = 0;
+	if (*s == '\0')
+		return (0);
 	if (c == '\0')
 		return (1);
 	while (s[i] != '\0')
@@ -26,8 +28,11 @@ static size_t	number_of_elements(char const *s, char c)
 		if (s[i] != c)
 		{
 			noe ++;
+			i++;
 			while ((s[i] != c) && (s[i] != '\0'))
 				i++;
+			if(i >= ft_strlen(s))
+				break;
 		}
 		i++;
 	}
@@ -47,7 +52,7 @@ static void	free_arr(char **p)
 	free(p);
 }
 
-static char	*get_me_word(char const *s, char c, char **p2)
+static char	*get_me_word(char const *s, char c)
 {
 	int		i;
 	char	*p;
@@ -58,10 +63,7 @@ static char	*get_me_word(char const *s, char c, char **p2)
 		i++;
 	p = ft_calloc(i + 1, sizeof(char));
 	if (p == NULL)
-	{
-		free_arr(p2);
 		return (NULL);
-	}
 	j = 0;
 	while (j < i)
 	{
@@ -80,17 +82,22 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	i = 0;
+	// if (*s == '\0')
+	// 	return (NULL);
 	noe = number_of_elements(s, c);
 	p = malloc (sizeof(char **) * (noe + 1));
 	if (p == NULL)
 		return (NULL);
-	while ((j < noe) && (p != NULL))
+	while (j < noe)
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		p[j] = get_me_word(&s[i], c, p);
+		p[j] = get_me_word(&s[i], c);
 		if (p[j] == NULL)
+		{
+			free_arr(p);
 			return (NULL);
+		}
 		j++;
 		while (s[i] != c && s[i] != '\0')
 			i++;
@@ -98,20 +105,21 @@ char	**ft_split(char const *s, char c)
 	p[j] = NULL;
 	return (p);
 }
-// #include "libft.h"
-// #include <stdio.h> 
+#include "libft.h"
+#include <stdio.h> 
 
-// int main()
-// {
-// 	//char s1[] = "Filip.a.b..c.";
-// 	char **p;
-// 	p = ft_split("hello!", '\0');
-// 	int i = 0;
-// 	while(p[i])
-// 	{
-// 		printf("-> '%s'\n", p[i]);
-// 		i++;
-// 	}
-// 	free_arr(p);
-// 	return (0);
-// }
+int main()
+{
+	//char s1[] = "Filip.a.b..c.";
+	char **p;
+	p = ft_split("", 'a');
+	int i = 0;
+	while(p != NULL)
+	{
+		printf("-> '%s'\n", p[i]);
+		i++;
+	}
+	if (p != NULL)
+		free_arr(p);
+	return (0);
+}
