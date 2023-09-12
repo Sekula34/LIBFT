@@ -53,12 +53,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (p);
 }
-
 // #include<stdio.h>
 // int main()
 // {
 // 	char s[] = "";
-// 	char s1[] = "a";
+// 	char s1[] = "";
 // 	char *p1; 
 
 // 	p1 = ft_strtrim(s, s1); 
