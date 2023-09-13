@@ -26,6 +26,13 @@ static int	is_in_char_set(char const c, char const *set)
 	return (0);
 }
 
+static int	start_index_check(char const *s1, int start_index)
+{
+	if (start_index == ft_strlen(s1))
+		return (0);
+	return (start_index);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		start_index;
@@ -42,8 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_index ++;
 	while (is_in_char_set (s1[ft_strlen(s1) - 1 - sub_end], set))
 		sub_end ++;
-	if (start_index == ft_strlen(s1))
-		start_index = 0;
+	start_index = start_index_check(s1, start_index);
 	p = ft_calloc (ft_strlen(s1) + 1 - start_index - sub_end, sizeof(char));
 	if (p == NULL)
 		return (NULL);
