@@ -44,7 +44,7 @@ OBJS := $(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS) $^
 
 %.o: %.c
 	$(COMPILER) $(COMP_FLAGS) -c $< -o $@ -I./
@@ -56,6 +56,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
 
 .PHONY: clean fclean re all
