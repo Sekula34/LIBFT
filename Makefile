@@ -39,6 +39,10 @@ ft_substr.c \
 ft_tolower.c \
 ft_toupper.c
 
+BONUS_SRC = ft_lstnew.c
+
+BONUS_OBJS := $(BONUS_SRC:%.c = %.o)
+
 OBJS := $(SRCS:%.c=%.o)
 
 all: $(NAME)
@@ -50,11 +54,14 @@ $(NAME): $(OBJS)
 	$(COMPILER) $(COMP_FLAGS) -c $< -o $@ -I./
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean re all
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS) 
+
+.PHONY: clean fclean re all bonus
