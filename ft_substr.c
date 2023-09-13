@@ -37,14 +37,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (p);
 }
-#include<stdio.h>
-int main()
-{
-	char s[] = "lorem ipsum dolor sit amet"; 
-	char *p1; 
+// #include<stdio.h>
+// int main()
+// {
+// 	char s[] = "lorem ipsum dolor sit amet"; 
+// 	char *p1; 
 
-	p1 = ft_substr(s,7,10); 
-	printf("%s", p1); 
-	free(p1); 
-	return (0); 
-}
+// 	p1 = ft_substr(s,7,10); 
+// 	printf("%s", p1); 
+// 	free(p1); 
+// 	return (0); 
+// }
