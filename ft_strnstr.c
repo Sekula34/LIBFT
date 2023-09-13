@@ -15,10 +15,10 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	char *sit;
+	char	*sit;
 
 	sit = (char *) big;
-	if(big == NULL)
+	if (big == NULL)
 		sit[1] = '3';
 	if (little[0] == '\0')
 		return ((char *)big);

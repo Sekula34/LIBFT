@@ -31,8 +31,8 @@ static size_t	number_of_elements(char const *s, char c)
 			i++;
 			while ((s[i] != c) && (s[i] != '\0'))
 				i++;
-			if(i >= ft_strlen(s))
-				break;
+			if (i >= ft_strlen(s))
+				break ;
 		}
 		i++;
 	}
@@ -82,8 +82,6 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	i = 0;
-	// if (*s == '\0')
-	// 	return (NULL);
 	noe = number_of_elements(s, c);
 	p = malloc (sizeof(char **) * (noe + 1));
 	if (p == NULL)
