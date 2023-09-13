@@ -24,18 +24,18 @@ char	*ft_strdup(const char *s)
 	return (p);
 }
 
-#include<stdio.h>
-#include<string.h>
+// #include<stdio.h>
+// #include<string.h>
 
-int main()
-{
-    char source[] = "0123456789";
+// int main()
+// {
+//     char source[] = "0123456789";
 
-    // A copy of source is created dynamically
-    // and pointer to copy is returned.
-    char* target = ft_strdup(source);
+//     // A copy of source is created dynamically
+//     // and pointer to copy is returned.
+//     char* target = ft_strdup(source);
 
-    printf("%s", target);
-	free(target);
-    return 0;
-}
+//     printf("%s", target);
+// 	free(target);
+//     return 0;
+// }
