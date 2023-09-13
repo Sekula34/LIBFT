@@ -26,7 +26,7 @@ static int	is_in_char_set(char const c, char const *set)
 	return (0);
 }
 
-static int	start_index_check(char const *s1, int start_index)
+static int	start_index_check(char const *s1, size_t start_index)
 {
 	if (start_index == ft_strlen(s1))
 		return (0);

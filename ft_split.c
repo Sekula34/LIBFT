@@ -75,8 +75,8 @@ static char	*get_me_word(char const *s, char c)
 
 char	**filler(char **p, size_t noe, char const *s, char c)
 {
-	int	j;
-	int	i;
+	size_t	j;
+	int		i;
 
 	i = 0;
 	j = 0;
@@ -102,11 +102,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**p;
 	size_t	noe;
-	size_t	i;
-	size_t	j;
 
-	j = 0;
-	i = 0;
 	noe = number_of_elements(s, c);
 	p = malloc (sizeof(char **) * (noe + 1));
 	if (p == NULL)
@@ -114,7 +110,6 @@ char	**ft_split(char const *s, char c)
 	p = filler(p, noe, s, c);
 	if (p == NULL)
 		return (NULL);
-	p[j] = NULL;
 	return (p);
 }
 // #include "libft.h"
