@@ -28,10 +28,10 @@ static int	is_in_char_set(char const c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start_index;
-	size_t	sub_end;
-	size_t	i;
-	char	*p;
+	size_t		start_index;
+	size_t		sub_end;
+	size_t		i;
+	char		*p;
 
 	start_index = 0;
 	sub_end = 0;
@@ -42,6 +42,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_index ++;
 	while (is_in_char_set (s1[ft_strlen(s1) - 1 - sub_end], set))
 		sub_end ++;
+	if (start_index == sub_end)
+		start_index = 0;
 	p = ft_calloc (ft_strlen(s1) + 1 - start_index - sub_end, sizeof(char));
 	if (p == NULL)
 		return (NULL);
