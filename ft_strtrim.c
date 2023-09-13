@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_index ++;
 	while (is_in_char_set (s1[ft_strlen(s1) - 1 - sub_end], set))
 		sub_end ++;
-	if (start_index == sub_end)
+	if (start_index == ft_strlen(s1))
 		start_index = 0;
 	p = ft_calloc (ft_strlen(s1) + 1 - start_index - sub_end, sizeof(char));
 	if (p == NULL)
@@ -56,14 +56,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (p);
 }
 
-// #include<stdio.h>
-// int main()
-// {
-// 	char s[] = "  \t \t \n   \n\n\n\t";
-// 	char s1[] = " \n\t";
-// 	char *p1; 
-// 	p1 = ft_strtrim(s, s1); 
-// 	printf("%s", p1); 
-// 	free(p1); 
-// 	return (0); 
-// }
+#include<stdio.h>
+int main()
+{
+	char s[] = "   xxxtripouille   xxx";
+	char s1[] = " x";
+	char *p1; 
+	p1 = ft_strtrim(s, s1); 
+	printf("%s", p1); 
+	free(p1); 
+	return (0); 
+}
