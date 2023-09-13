@@ -16,8 +16,8 @@ char	*ft_strdup(const char *s)
 {
 	char	*p;
 
-	p = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	//p = malloc((ft_strlen(s) + 1) * sizeof(char));
+	//p = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	p = malloc(ft_strlen(s) + 1);
 	if (p == NULL)
 		return (NULL);
 	ft_strlcpy(p, s, ft_strlen(s) + 1);
@@ -27,15 +27,15 @@ char	*ft_strdup(const char *s)
 #include<stdio.h>
 #include<string.h>
 
-// int main()
-// {
-//     char source[] = "0123456789";
+int main()
+{
+    char source[] = "0123456789";
 
-//     // A copy of source is created dynamically
-//     // and pointer to copy is returned.
-//     char* target = ft_strdup(source);
+    // A copy of source is created dynamically
+    // and pointer to copy is returned.
+    char* target = ft_strdup(source);
 
-//     printf("%s", target);
-// 	free(target);
-//     return 0;
-// }
+    printf("%s", target);
+	free(target);
+    return 0;
+}

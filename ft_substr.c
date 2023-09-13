@@ -18,15 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (len > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	if (start >= ft_strlen(s))
+	if (start >= ft_strlen(s) || len == 0)
 	{
 		p = ft_calloc(1, 1);
 		return (p);
 	}
-	else
-		p = ft_calloc(len + 1, sizeof(char));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	p = ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	while ((i < len) && (s[start] != '\0'))
