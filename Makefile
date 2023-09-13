@@ -41,7 +41,7 @@ ft_toupper.c
 
 BONUS_SRC = ft_lstnew.c
 
-BONUS_OBJS := $(BONUS_SRC:%.c = %.o)
+BONUS_OBJS := $(BONUS_SRC:%.c=%.o)
 
 OBJS := $(SRCS:%.c=%.o)
 
