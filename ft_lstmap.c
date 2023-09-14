@@ -16,26 +16,35 @@ static t_list	*create_first(t_list *first_old_element, void *(*f)(void *))
 {
 	t_list	*first_new_element;
 
-	first_new_element = malloc(sizeof(t_list)); 
-	if(first_new_element == NULL)
+	first_new_element = malloc(sizeof(t_list));
+	if (first_new_element == NULL)
 		return (NULL);
 	first_new_element->content = (*f)(first_old_element->content);
 	first_new_element->next = NULL;
 	return (first_new_element);
 }
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	**pointer_head;
 	t_list	*new_element;
 	t_list	*old_element;
-	if(lst)
+
+	if (lst)
 	{
-		new_element =create_first(lst,(*f));
+		new_element = create_first(lst, (*f));
+		if (new_element == NULL)
+			return (NULL);
 		pointer_head = &new_element;
-		while(lst->next != NULL)
+		while (lst->next != NULL)
 		{
 			old_element = lst->next;
 			new_element->next = create_first(old_element, (*f));
+			if (new_element->next == NULL)
+			{
+				ft_lstclear(pointer_head, (*del));
+				return (NULL);
+			}
 			lst = lst->next;
 		}
 		return (*pointer_head);
