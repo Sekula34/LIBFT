@@ -36,7 +36,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (new_element == NULL)
 			return (NULL);
 		pointer_head = &new_element;
-		while (lst->next != NULL)
+		lst = lst->next;
+		while (lst != NULL)
 		{
 			old_element = lst->next;
 			new_element->next = create_first(old_element, (*f));
@@ -49,4 +50,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		}
 		return (*pointer_head);
 	}
+	return (NULL);
 }
