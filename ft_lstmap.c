@@ -14,7 +14,7 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	**pointer_head;
+	t_list	*pointer_head;
 	t_list	*new_element;
 	void	*sadrzaj;
 
@@ -27,14 +27,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			new_element = ft_lstnew(sadrzaj);
 			if (new_element == NULL)
 			{
-				ft_lstclear(pointer_head, (*del));
+				ft_lstclear(&pointer_head, (*del));
 				(*del)(sadrzaj);
 				return (NULL);
 			}
-			ft_lstadd_back(pointer_head, new_element);
+			ft_lstadd_back(&pointer_head, new_element);
 			lst = lst->next;
 		}
-		return (*pointer_head);
+		return (pointer_head);
 	}
 	return (NULL);
 }
