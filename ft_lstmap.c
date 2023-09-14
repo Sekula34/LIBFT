@@ -12,41 +12,28 @@
 
 #include "libft.h"
 
-static t_list	*create_first(t_list *first_old_element, void *(*f)(void *))
-{
-	t_list	*first_new_element;
-
-	first_new_element = ft_lstnew((*f)(first_old_element->content));
-	if (first_new_element == NULL)
-		return (NULL);
-	return (first_new_element);
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	**pointer_head;
 	t_list	*new_element;
-	t_list	*old_element;
+	void	*sadrzaj;
 
 	if (lst)
 	{
-		new_element = create_first(lst, (*f));
-		if (new_element == NULL)
-			return (NULL);
-		pointer_head = &new_element;
-		lst = lst->next;
-		while (lst != NULL)
+		pointer_head = NULL;
+		while (lst)
 		{
-			old_element = lst;
-			new_element->next = create_first(old_element, (*f));
-			if (new_element->next == NULL)
+			sadrzaj = (*f)(lst->content);
+			new_element = ft_lstnew(sadrzaj);
+			if (new_element == NULL)
 			{
 				ft_lstclear(pointer_head, (*del));
+				(*del)(sadrzaj);
 				return (NULL);
 			}
+			ft_lstadd_back(pointer_head, new_element);
 			lst = lst->next;
 		}
-		return (*pointer_head);
 	}
 	return (NULL);
 }
