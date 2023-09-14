@@ -34,6 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstadd_back(pointer_head, new_element);
 			lst = lst->next;
 		}
+		return (*pointer_head);
 	}
 	return (NULL);
 }
