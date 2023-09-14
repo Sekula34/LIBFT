@@ -27,13 +27,17 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	**pointer_head;
 	t_list	*new_element;
+	t_list	*old_element;
 	if(lst)
 	{
 		new_element =create_first(lst,(*f));
 		pointer_head = &new_element;
-		while(lst != NULL)
+		while(lst->next != NULL)
 		{
-
+			old_element = lst->next;
+			new_element->next = create_first(old_element, (*f));
+			lst = lst->next;
 		}
+		return (*pointer_head);
 	}
 }
